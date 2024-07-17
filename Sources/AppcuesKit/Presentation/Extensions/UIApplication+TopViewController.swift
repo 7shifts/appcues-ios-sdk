@@ -73,6 +73,10 @@ extension UIApplication: TopControllerGetting {
 }
 
 extension UIApplication: URLOpening {
+    func open(_ url: URL, options: [OpenExternalURLOptionsKey : Any], completionHandler: ((Bool) -> Void)?) {
+        self.open(url, options: options, completionHandler: completionHandler)
+    }
+    
     func open(potentialUniversalLink url: URL) -> Bool {
         let userActivity = NSUserActivity(activityType: NSUserActivityTypeBrowsingWeb)
         userActivity.webpageURL = url
