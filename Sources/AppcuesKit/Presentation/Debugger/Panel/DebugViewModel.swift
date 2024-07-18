@@ -234,7 +234,7 @@ internal class DebugViewModel: ObservableObject {
 
         deepLinkVerificationToken = token
 
-        UIApplication.shared.open(url, options: [:])
+        UIApplication.shared.open(url, options: [:], completionHandler: nil)
 
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             if self.deepLinkVerificationToken != nil {
